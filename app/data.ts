@@ -53,6 +53,7 @@ export const projects: Project[] = [
     description: 'Aplicación para organizar ingresos, registrar gastos y comparar presupuestos con el gasto real a lo largo del año.',
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL'],
     visibility: 'private',
+    liveUrl: 'https://finances-personales-app.vercel.app/',
     highlights: ['Presupuestos por categoría, fuentes de ingreso y traslado de saldo entre meses.', 'Gráficos y seguimiento anual con alertas de sobrepresupuesto.', 'Autenticación, políticas RLS y modo demostración con datos locales.'],
     accent: 'cyan',
   },
