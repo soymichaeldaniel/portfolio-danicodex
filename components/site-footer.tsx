@@ -22,7 +22,7 @@ export function SiteFooter() {
         </a>
       </div>
       <div className="shell footer-bottom">
-        <a className="brand" href="/"><span>Dani<span>Codex</span></span></a>
+        <a className="brand" href="/"><span>Michael <span>Daniel</span></span></a>
         <div className="social-links">{socials.map(([name, url]) => <a key={name} href={url} target="_blank" rel="noreferrer">{name}</a>)}</div>
         <p>Hecho con código y curiosidad.</p>
       </div>

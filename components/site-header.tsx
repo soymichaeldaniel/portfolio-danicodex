@@ -5,9 +5,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <a className="brand" href="/" aria-label="DaniCodex, inicio">
+        <a className="brand" href="/" aria-label="Michael Daniel, inicio">
           <img src="https://github.com/DaniCodex.png?size=96" alt="" />
-          <span>Dani<span>Codex</span></span>
+          <span>Michael <span>Daniel</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Navegación principal">
           <a href="/">Inicio</a>

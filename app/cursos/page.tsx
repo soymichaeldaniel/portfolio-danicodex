@@ -7,7 +7,7 @@ import { courses, type CourseCategory } from '../data';
 
 export const metadata: Metadata = {
   title: 'Cursos de programación',
-  description: 'Rutas gratuitas de DaniCodex para aprender lógica, desarrollo web, Python, JavaScript, bases de datos y más.',
+  description: 'Rutas gratuitas de Michael Daniel para aprender lógica, desarrollo web, Python, JavaScript, bases de datos y más.',
 };
 
 const paths: { id: CourseCategory; step: string; title: string; description: string }[] = [

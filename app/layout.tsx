@@ -7,14 +7,14 @@ const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://danicodex-portfolio.ccus-daniel-pacheco.chatgpt.site'),
-  title: { default: 'DaniCodex — Aprende programación construyendo', template: '%s | DaniCodex' },
-  description: 'Cursos gratuitos, proyectos y recursos para aprender programación de forma práctica con DaniCodex.',
+  title: { default: 'Michael Daniel — Aprende programación construyendo', template: '%s | Michael Daniel' },
+  description: 'Cursos gratuitos, proyectos y recursos para aprender programación de forma práctica con Michael Daniel.',
   icons: { icon: '/favicon.svg' },
   openGraph: {
-    title: 'DaniCodex — Aprende programación construyendo',
+    title: 'Michael Daniel — Aprende programación construyendo',
     description: 'Cursos gratuitos, proyectos y recursos para aprender programación de forma práctica.',
     url: '/',
-    siteName: 'DaniCodex',
+    siteName: 'Michael Daniel',
     locale: 'es_PE',
     type: 'website',
   },
