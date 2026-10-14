@@ -55,6 +55,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL'],
     visibility: 'private',
     liveUrl: 'https://finances-personales-app.vercel.app/',
+    thumbnail: '/finanzas-thumbnail.png',
     highlights: ['Presupuestos por categoría, fuentes de ingreso y traslado de saldo entre meses.', 'Gráficos y seguimiento anual con alertas de sobrepresupuesto.', 'Autenticación, políticas RLS y modo demostración con datos locales.'],
     accent: 'cyan',
   },
