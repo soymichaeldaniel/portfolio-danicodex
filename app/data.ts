@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   technologies: string[];
   visibility: 'public' | 'private';
+  collaborative?: boolean;
   repoUrl?: string;
   liveUrl?: string;
   thumbnail?: string;
@@ -59,6 +60,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Votómetro',
+    collaborative: true,
     description: 'Plataforma cívica para explorar afinidades con propuestas de las Elecciones Perú 2026 de forma clara y accesible.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Datos'],
     visibility: 'public',
@@ -78,6 +80,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Cinergia',
+    collaborative: true,
     description: 'Sitio web de una comunidad universitaria de ingeniería que conecta estudiantes, ideas y oportunidades de desarrollo profesional.',
     technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules'],
     visibility: 'public',

@@ -414,7 +414,9 @@ export function MichaelDesktop({
               <h2>{selected.title}</h2>
               <p className="os-project-visibility">
                 {selected.visibility === 'private' ? 'Código privado' : 'Código público'}
+                {selected.collaborative && ' · Proyecto colaborativo'}
               </p>
+              {selected.collaborative && <p>Desarrollado en equipo.</p>}
               <p>{selected.description}</p>
               <div className="os-tags">
                 {selected.technologies.map((t) => (
@@ -479,7 +481,7 @@ export function MichaelDesktop({
                         {String(i + 1).padStart(2, '0')} / {p.technologies[0]}
                       </span>
                       <h3>{p.title}</h3>
-                      <span className="os-project-visibility">{p.visibility === 'private' ? 'Código privado' : 'Código público'}</span>
+                      <span className="os-project-visibility">{p.visibility === 'private' ? 'Código privado' : 'Código público'}{p.collaborative && ' · Proyecto colaborativo'}</span>
                       <p>{p.description}</p>
                       <span className="os-file-open">
                         Ver detalles <ChevronRight size={15} />
@@ -617,6 +619,7 @@ export function MichaelDesktop({
               <span>
                 <strong>{p.title}</strong>
                 <small>{p.technologies.join(' · ')}</small>
+                {p.collaborative && <small>Proyecto colaborativo</small>}
                 <small>{p.visibility === 'private' ? 'Código privado · ver ficha' : 'Código público · ver ficha'}</small>
               </span>
               <ChevronRight size={16} aria-hidden="true" />
