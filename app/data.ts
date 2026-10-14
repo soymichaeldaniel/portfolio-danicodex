@@ -40,11 +40,12 @@ export const projects: Project[] = [
     accent: 'blue',
   },
   {
-    title: 'Cutflow AI',
-    description: 'Editor de video de escritorio para sincronizar pantalla y cámara, revisar cortes y agilizar la creación de contenido con procesamiento local.',
-    technologies: ['Tauri', 'Rust', 'React', 'TypeScript', 'FFmpeg', 'Whisper'],
+    title: 'Cutflow Cleaner',
+    description: 'Aplicación de escritorio para sincronizar una grabación de pantalla y una cámara, revisar silencios y exportar ambos videos con los mismos cortes.',
+    technologies: ['Tauri', 'Rust', 'React', 'TypeScript', 'FFmpeg'],
     visibility: 'private',
-    highlights: ['Sincronización por audio y detección configurable de silencios.', 'Timeline con edición no destructiva, deshacer y rehacer.', 'Detección local de muletillas y exportación de video compuesto.'],
+    thumbnail: '/cutflow-cleaner-thumbnail.png',
+    highlights: ['Sincronización de pantalla y cámara a partir del audio.', 'Ajustes de umbral, duración mínima y margen antes de analizar los silencios.', 'Revisión de cortes y exportación de dos MP4 alineados con procesamiento local.'],
     accent: 'purple',
   },
   {
