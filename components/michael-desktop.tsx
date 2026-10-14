@@ -418,6 +418,12 @@ export function MichaelDesktop({
               </p>
               {selected.collaborative && <p>Desarrollado en equipo.</p>}
               <p>{selected.description}</p>
+              {selected.contribution && (
+                <section aria-label="Mi participación en el proyecto">
+                  <h3>Mi participación</h3>
+                  <p>{selected.contribution}</p>
+                </section>
+              )}
               <div className="os-tags">
                 {selected.technologies.map((t) => (
                   <span key={t}>{t}</span>

@@ -7,6 +7,7 @@ export interface Project {
   technologies: string[];
   visibility: 'public' | 'private';
   collaborative?: boolean;
+  contribution?: string;
   repoUrl?: string;
   liveUrl?: string;
   thumbnail?: string;
@@ -82,6 +83,7 @@ export const projects: Project[] = [
   {
     title: 'Cinergia',
     collaborative: true,
+    contribution: 'Me encargo del desarrollo e implementación del código del sitio web. Mi compañero se encarga del diseño.',
     description: 'Sitio web de una comunidad universitaria de ingeniería que conecta estudiantes, ideas y oportunidades de desarrollo profesional.',
     technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules'],
     visibility: 'public',
