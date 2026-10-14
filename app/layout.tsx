@@ -6,13 +6,13 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://danicodex-portfolio.ccus-daniel-pacheco.chatgpt.site'),
-  title: { default: 'Michael Daniel — Aprende programación construyendo', template: '%s | Michael Daniel' },
-  description: 'Cursos gratuitos, proyectos y recursos para aprender programación de forma práctica con Michael Daniel.',
+  metadataBase: new URL('https://portfolio-danicodex.vercel.app'),
+  title: { default: 'Michael Daniel — Mi escritorio personal', template: '%s | Michael Daniel' },
+  description: 'Explora el escritorio de Michael Daniel: proyectos, cursos gratuitos, tecnología e ideas. Desarrollador frontend y creador de contenido.',
   icons: { icon: '/favicon.svg' },
   openGraph: {
-    title: 'Michael Daniel — Aprende programación construyendo',
-    description: 'Cursos gratuitos, proyectos y recursos para aprender programación de forma práctica.',
+    title: 'Michael Daniel — Mi escritorio personal',
+    description: 'Un escritorio, muchas ideas. Explora mis proyectos, cursos y un poco de lo que soy.',
     url: '/',
     siteName: 'Michael Daniel',
     locale: 'es_PE',
