@@ -18,7 +18,6 @@ import {
   FileText,
   Folder,
   GitBranch as Github,
-  Grid2X2,
   Maximize2,
   Minus,
   Monitor,
@@ -28,6 +27,7 @@ import {
   Video as Youtube,
 } from 'lucide-react';
 import { courses, projects, type CourseCategory } from '@/app/data';
+import { RetroIcon } from './retro-icon';
 
 type AppId =
   | 'welcome'
@@ -645,7 +645,7 @@ export function MichaelDesktop({
               className="os-launcher"
             >
               <span className={`os-app-icon ${a.color}`}>
-                <a.icon size={29} strokeWidth={1.5} />
+                <RetroIcon kind={a.id} />
               </span>
               <span>{a.title}</span>
             </button>
@@ -673,7 +673,7 @@ export function MichaelDesktop({
               aria-label={`${a.title} (abre en otra pestaña)`}
             >
               <span className={`os-app-icon ${a.color}`}>
-                <a.icon size={29} strokeWidth={1.5} />
+                <RetroIcon kind={a.title === 'YouTube' ? 'youtube' : 'github'} />
               </span>
               <span>
                 {a.title} <ArrowUpRight size={10} />
@@ -772,6 +772,12 @@ export function MichaelDesktop({
                   </button>
                 </div>
               </div>
+              <nav className="retro-window-menu" aria-label={`Navegación de ${titles[w.id]}`}>
+                <button onClick={() => open('welcome')}>Inicio</button>
+                <button onClick={() => open('projects')}>Proyectos</button>
+                <button onClick={() => open('courses')}>Cursos</button>
+                <button onClick={() => open('about')}>Sobre mí</button>
+              </nav>
               <div className="os-window-body">{content(w.id)}</div>
               <div className="os-window-status">
                 <span>
@@ -824,7 +830,7 @@ export function MichaelDesktop({
           aria-label="Abrir menú de inicio"
           onClick={() => setMenu(!menu)}
         >
-          <Grid2X2 size={20} />
+          <RetroIcon kind="start" size={20} />
           <span>Inicio</span>
         </button>
         <div className="os-taskbar-divider" />
