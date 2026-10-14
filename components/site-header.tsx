@@ -6,7 +6,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell header-inner">
         <a className="brand" href="/" aria-label="Michael Daniel, inicio">
-          <img src="https://github.com/DaniCodex.png?size=96" alt="" />
+          <img src="https://github.com/soymichaeldaniel.png?size=96" alt="" />
           <span>Michael <span>Daniel</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Navegación principal">

@@ -18,14 +18,14 @@ export default function Home() {
           <p className="hero-lede">Soy Michael Daniel Pacheco. Te enseño a pasar de la idea al código con cursos gratuitos y proyectos explicados paso a paso.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="https://www.youtube.com/@danicodex" target="_blank" rel="noreferrer"><Play size={17} fill="currentColor" aria-hidden="true" /> Empezar a aprender</a>
-            <a className="button button-secondary" href="https://github.com/DaniCodex" target="_blank" rel="noreferrer"><GitBranch size={18} aria-hidden="true" /> Ver mi código</a>
+            <a className="button button-secondary" href="https://github.com/soymichaeldaniel" target="_blank" rel="noreferrer"><GitBranch size={18} aria-hidden="true" /> Ver mi código</a>
           </div>
           <div className="hero-note"><CodeXml size={16} aria-hidden="true" /> Desde 2020 compartiendo programación en español.</div>
         </div>
         <div className="hero-visual" aria-label="Identidad de Michael Daniel">
           <div className="orbit orbit-one" /><div className="orbit orbit-two" />
           <div className="code-card code-card-top"><span>01</span> idea → código</div>
-          <img src="https://github.com/DaniCodex.png?size=520" alt="Retrato de Michael Daniel" />
+          <img src="https://github.com/soymichaeldaniel.png?size=520" alt="Retrato de Michael Daniel" />
           <div className="code-card code-card-bottom"><span>&lt;/&gt;</span> aprende creando</div>
         </div>
       </section>

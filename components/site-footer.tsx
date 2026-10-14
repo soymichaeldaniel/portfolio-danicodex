@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const socials = [
   ['YouTube', 'https://www.youtube.com/@danicodex'],
-  ['GitHub', 'https://github.com/DaniCodex'],
+  ['GitHub', 'https://github.com/soymichaeldaniel'],
   ['Instagram', 'https://www.instagram.com/danicodex.dev/'],
   ['LinkedIn', 'https://www.linkedin.com/in/danicodex/'],
   ['X', 'https://x.com/danicodex'],
