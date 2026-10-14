@@ -34,6 +34,8 @@ export const projects: Project[] = [
     description: 'Marketplace social para descubrir productos, conocer las historias de sus creadores y apoyar emprendimientos locales.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma', 'Supabase', 'Auth.js'],
     visibility: 'private',
+    liveUrl: 'https://qhatu-market.vercel.app/',
+    thumbnail: '/qhatu-thumbnail.png',
     highlights: ['Perfiles de emprendimientos y catálogo de productos con imágenes.', 'Autenticación con Google y panel para gestionar negocios y productos.', 'Favoritos y reseñas conectados a una base de datos relacional.'],
     accent: 'blue',
   },
