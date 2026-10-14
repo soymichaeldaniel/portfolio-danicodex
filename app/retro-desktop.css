@@ -34,7 +34,7 @@
 .os-app-icon,.os-app-icon.blue,.os-app-icon.silver,.os-app-icon.violet,.os-app-icon.green,.os-app-icon.red { width:42px;height:42px;border:0;background:none;box-shadow:none; }
 .retro-icon { display:block;filter:drop-shadow(1px 1px 0 #0005);image-rendering:pixelated; }
 .os-window-area { inset:50px 45px 42px 135px; }
-.os-window { padding:3px;border:0;background:#c0c0c0;box-shadow:inset 1px 1px #fff,inset -1px -1px #000,inset 2px 2px #dfdfdf,inset -2px -2px #808080,2px 2px #003c3c; }
+.os-window { padding:3px;border:0;background:#c0c0c0;box-shadow:inset 1px 1px #fff,inset -1px -1px #000,inset 2px 2px #dfdfdf,inset -2px -2px #808080,2px 2px #003c3c;animation:none!important; }
 .os-window.is-background { filter:none; }
 .os-window-titlebar { height:28px;background:#000080;color:#fff;padding-left:6px;border:0; }
 .os-window.is-background .os-window-titlebar { background:#808080; }
