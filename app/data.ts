@@ -85,4 +85,15 @@ export const projects: Project[] = [
     highlights: ['Páginas de inicio y nosotros con componentes reutilizables.', 'Carruseles de fotografías y aliados, y animaciones de aparición.', 'Secciones para presentar carreras, principios, equipo y actividades.'],
     accent: 'yellow',
   },
+  {
+    title: 'Michael OS',
+    description: 'Mi portfolio convertido en un escritorio interactivo de inspiración retro: una forma de explorar mis proyectos, cursos y perfil profesional.',
+    technologies: ['React', 'TypeScript', 'CSS'],
+    visibility: 'public',
+    repoUrl: 'https://github.com/soymichaeldaniel/portfolio-danicodex',
+    liveUrl: 'https://michaeldanielos.vercel.app/?app=welcome',
+    thumbnail: '/michael-os-thumbnail.png',
+    highlights: ['Ventanas interactivas con arrastre, minimizado y barra de tareas.', 'Aplicaciones para proyectos, cursos, tecnologías y consulta del CV.', 'Vista móvil adaptada y acceso directo al perfil para reclutadores.'],
+    accent: 'blue',
+  },
 ];
