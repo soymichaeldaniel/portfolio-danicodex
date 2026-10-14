@@ -7,7 +7,7 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-danicodex.vercel.app'),
+  metadataBase: new URL('https://michaeldanielos.vercel.app'),
   title: { default: 'Michael Daniel — Mi escritorio personal', template: '%s | Michael Daniel' },
   description: 'Explora el escritorio de Michael Daniel: proyectos, cursos gratuitos, tecnología e ideas. Desarrollador frontend y creador de contenido.',
   icons: { icon: '/favicon.svg' },
