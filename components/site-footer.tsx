@@ -2,11 +2,13 @@
 import { ArrowUpRight } from 'lucide-react';
 
 const socials = [
-  ['YouTube', 'https://www.youtube.com/@danicodex'],
+  ['YouTube', 'https://www.youtube.com/@soymichaeldaniel'],
   ['GitHub', 'https://github.com/soymichaeldaniel'],
-  ['Instagram', 'https://www.instagram.com/danicodex.dev/'],
-  ['LinkedIn', 'https://www.linkedin.com/in/danicodex/'],
-  ['X', 'https://x.com/danicodex'],
+  ['Instagram', 'https://www.instagram.com/soymichaeldaniel/'],
+  ['TikTok', 'https://www.tiktok.com/@soymichaeldaniel'],
+  ['LinkedIn', 'https://www.linkedin.com/in/soymichaeldaniel/'],
+  ['X', 'https://x.com/soymichaelpc'],
+  ['Facebook', 'https://www.facebook.com/soymichaeldaniel/'],
 ];
 
 export function SiteFooter() {
@@ -17,7 +19,7 @@ export function SiteFooter() {
           <p className="eyebrow">Sigamos aprendiendo</p>
           <h2>Una comunidad que convierte ideas en código.</h2>
         </div>
-        <a className="button button-primary" href="https://www.youtube.com/@danicodex?sub_confirmation=1" target="_blank" rel="noreferrer">
+        <a className="button button-primary" href="https://www.youtube.com/@soymichaeldaniel?sub_confirmation=1" target="_blank" rel="noreferrer">
           Suscríbete al canal <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </div>

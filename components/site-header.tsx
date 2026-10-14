@@ -15,7 +15,7 @@ export function SiteHeader() {
           <a href="/#proyectos">Proyectos</a>
           <a href="/#sobre-mi">Sobre mí</a>
         </nav>
-        <a className="header-cta" href="https://www.youtube.com/@danicodex" target="_blank" rel="noreferrer">
+        <a className="header-cta" href="https://www.youtube.com/@soymichaeldaniel" target="_blank" rel="noreferrer">
           <Video size={18} aria-hidden="true" /> Canal
         </a>
         <details className="mobile-nav">

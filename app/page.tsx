@@ -17,7 +17,7 @@ export default function Home() {
           <h1>Aprende programación <em>construyendo.</em></h1>
           <p className="hero-lede">Soy Michael Daniel Pacheco. Te enseño a pasar de la idea al código con cursos gratuitos y proyectos explicados paso a paso.</p>
           <div className="hero-actions">
-            <a className="button button-primary" href="https://www.youtube.com/@danicodex" target="_blank" rel="noreferrer"><Play size={17} fill="currentColor" aria-hidden="true" /> Empezar a aprender</a>
+            <a className="button button-primary" href="https://www.youtube.com/@soymichaeldaniel" target="_blank" rel="noreferrer"><Play size={17} fill="currentColor" aria-hidden="true" /> Empezar a aprender</a>
             <a className="button button-secondary" href="https://github.com/soymichaeldaniel" target="_blank" rel="noreferrer"><GitBranch size={18} aria-hidden="true" /> Ver mi código</a>
           </div>
           <div className="hero-note"><CodeXml size={16} aria-hidden="true" /> Desde 2020 compartiendo programación en español.</div>
@@ -87,7 +87,7 @@ export default function Home() {
             <p>Soy Michael Daniel Pacheco, estudiante de Ingeniería Empresarial y de Sistemas, desarrollador frontend y creador de contenido sobre programación.</p>
             <p>Creo tutoriales prácticos para que más personas puedan entender la programación, construir proyectos propios y avanzar con confianza.</p>
           </div>
-          <a className="text-link" href="https://www.linkedin.com/in/danicodex/" target="_blank" rel="noreferrer">Conoce mi perfil <ArrowRight size={17} aria-hidden="true" /></a>
+          <a className="text-link" href="https://www.linkedin.com/in/soymichaeldaniel/" target="_blank" rel="noreferrer">Conoce mi perfil <ArrowRight size={17} aria-hidden="true" /></a>
         </div>
       </section>
       <SiteFooter />
