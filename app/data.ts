@@ -1,7 +1,17 @@
 export type CourseCategory = 'inicio' | 'programacion' | 'proyectos';
 
 export interface Course { slug: string; title: string; description: string; category: CourseCategory; level: string; lessons: string; url: string; thumbnail: string; }
-export interface Project { title: string; description: string; technologies: string[]; repoUrl: string; liveUrl?: string; thumbnail: string; accent: string; }
+export interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  visibility: 'public' | 'private';
+  repoUrl?: string;
+  liveUrl?: string;
+  thumbnail?: string;
+  highlights: string[];
+  accent: string;
+}
 
 export const courses: Course[] = [
   { slug: 'pseint-desde-cero', title: 'Lógica de Programación con PSeInt', description: 'Domina algoritmos, variables, condicionales y ciclos con ejercicios progresivos desde cero.', category: 'inicio', level: 'Principiante', lessons: '47 lecciones', url: 'https://www.youtube.com/playlist?list=PLZmtYtnx3IcUR9P1pZ7VOWlzvizYB6EF-', thumbnail: 'https://i.ytimg.com/vi/I9zCEqyDeYg/hqdefault.jpg' },
@@ -19,9 +29,56 @@ export const courses: Course[] = [
 export const featuredCourses = courses.slice(0, 3);
 
 export const projects: Project[] = [
-  { title: 'Votómetro', description: 'Plataforma cívica para explorar afinidades con propuestas de las Elecciones Perú 2026 de forma clara y accesible.', technologies: ['HTML', 'CSS', 'JavaScript', 'Datos'], repoUrl: 'https://github.com/soymichaeldaniel/votometro', liveUrl: 'https://votometrolat.com/', thumbnail: '/votometro-thumbnail.png', accent: 'blue' },
-  { title: 'Flores Amarillas', description: 'Experiencia web interactiva que combina animación, música y creatividad con tecnologías web.', technologies: ['HTML', 'CSS', 'JavaScript'], repoUrl: 'https://github.com/soymichaeldaniel/flores-amarillas-tres', thumbnail: 'https://github.com/user-attachments/assets/899d1b33-bc87-45f8-8cb9-e11cf992a9d6', accent: 'yellow' },
-  { title: 'Formulario Dinámico', description: 'Interfaz animada de registro e inicio de sesión construida desde cero para enseñar fundamentos frontend.', technologies: ['HTML', 'CSS', 'JavaScript'], repoUrl: 'https://github.com/soymichaeldaniel/Formulario-dinamico-HTML-CSS-JS', thumbnail: 'https://user-images.githubusercontent.com/85034795/147512236-80fe2b7d-81cb-4b18-82f3-1341b0f74953.png', accent: 'cyan' },
-  { title: '100 Proyectos con JavaScript', description: 'Reto progresivo de proyectos con JavaScript puro: DOM, APIs, estado, LocalStorage y lógica de negocio.', technologies: ['JavaScript', 'APIs', 'LocalStorage'], repoUrl: 'https://github.com/soymichaeldaniel/100-proyectos-javascript', thumbnail: 'https://opengraph.githubassets.com/michael-daniel-portfolio/soymichaeldaniel/100-proyectos-javascript', accent: 'orange' },
-  { title: 'Sistema de Biblioteca', description: 'Simulación de gestión de una biblioteca digital desarrollada para practicar estructuras y lógica con C++.', technologies: ['C++', 'POO', 'Consola'], repoUrl: 'https://github.com/soymichaeldaniel/sistema-bibloteca-cpp', thumbnail: 'https://github.com/user-attachments/assets/2e3bdac9-ff8f-4474-a3f5-e01db2378a73', accent: 'purple' },
+  {
+    title: 'Qhatu',
+    description: 'Marketplace social para descubrir productos, conocer las historias de sus creadores y apoyar emprendimientos locales.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma', 'Supabase', 'Auth.js'],
+    visibility: 'private',
+    highlights: ['Perfiles de emprendimientos y catálogo de productos con imágenes.', 'Autenticación con Google y panel para gestionar negocios y productos.', 'Favoritos y reseñas conectados a una base de datos relacional.'],
+    accent: 'blue',
+  },
+  {
+    title: 'Cutflow AI',
+    description: 'Editor de video de escritorio para sincronizar pantalla y cámara, revisar cortes y agilizar la creación de contenido con procesamiento local.',
+    technologies: ['Tauri', 'Rust', 'React', 'TypeScript', 'FFmpeg', 'Whisper'],
+    visibility: 'private',
+    highlights: ['Sincronización por audio y detección configurable de silencios.', 'Timeline con edición no destructiva, deshacer y rehacer.', 'Detección local de muletillas y exportación de video compuesto.'],
+    accent: 'purple',
+  },
+  {
+    title: 'Finanzas Conectadas',
+    description: 'Aplicación para organizar ingresos, registrar gastos y comparar presupuestos con el gasto real a lo largo del año.',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL'],
+    visibility: 'private',
+    highlights: ['Presupuestos por categoría, fuentes de ingreso y traslado de saldo entre meses.', 'Gráficos y seguimiento anual con alertas de sobrepresupuesto.', 'Autenticación, políticas RLS y modo demostración con datos locales.'],
+    accent: 'cyan',
+  },
+  {
+    title: 'Votómetro',
+    description: 'Plataforma cívica para explorar afinidades con propuestas de las Elecciones Perú 2026 de forma clara y accesible.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Datos'],
+    visibility: 'public',
+    repoUrl: 'https://github.com/soymichaeldaniel/votometro',
+    liveUrl: 'https://votometrolat.com/',
+    thumbnail: '/votometro-thumbnail.png',
+    highlights: ['Exploración interactiva de afinidades con propuestas electorales.', 'Presentación accesible de información para comparar opciones.'],
+    accent: 'blue',
+  },
+  {
+    title: 'Music Player',
+    description: 'Reproductor de música para Android que organiza la biblioteca del teléfono y permite escuchar archivos locales sin conexión.',
+    technologies: ['Kotlin', 'Android', 'Media3', 'ExoPlayer'],
+    visibility: 'private',
+    highlights: ['Búsqueda por título o artista, favoritos y carátulas de álbumes.', 'Reproducción en segundo plano y controles en la notificación multimedia.', 'Cola de reproducción, avance, modo aleatorio y repetición.'],
+    accent: 'orange',
+  },
+  {
+    title: 'Cinergia',
+    description: 'Sitio web de una comunidad universitaria de ingeniería que conecta estudiantes, ideas y oportunidades de desarrollo profesional.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules'],
+    visibility: 'public',
+    repoUrl: 'https://github.com/soymichaeldaniel/cinergia',
+    highlights: ['Páginas de inicio y nosotros con componentes reutilizables.', 'Carruseles de fotografías y aliados, y animaciones de aparición.', 'Secciones para presentar carreras, principios, equipo y actividades.'],
+    accent: 'yellow',
+  },
 ];

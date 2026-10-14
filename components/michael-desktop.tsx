@@ -26,7 +26,7 @@ import {
   X,
   Video as Youtube,
 } from 'lucide-react';
-import { courses, projects, type CourseCategory } from '@/app/data';
+import { courses, projects, type CourseCategory, type Project } from '@/app/data';
 import { RetroIcon } from './retro-icon';
 
 type AppId =
@@ -144,6 +144,17 @@ function LinkOut({
       <ArrowUpRight size={14} aria-hidden="true" />
       <span className="sr-only"> (abre en otra pestaña)</span>
     </a>
+  );
+}
+function ProjectPreview({ project }: { project: Project }) {
+  return project.thumbnail ? (
+    <Photo src={project.thumbnail} alt={`Vista previa de ${project.title}`} />
+  ) : (
+    <div className="os-project-placeholder">
+      <Folder size={36} aria-hidden="true" />
+      <strong>{project.title}</strong>
+      <span>Ficha del proyecto · sin captura disponible</span>
+    </div>
   );
 }
 export function MichaelDesktop({
@@ -396,27 +407,41 @@ export function MichaelDesktop({
               <button className="os-back" onClick={() => setProjectIndex(null)}>
                 <ArrowLeft size={16} /> Todos los proyectos
               </button>
-              <Photo
-                src={selected.thumbnail}
-                alt={`Vista previa de ${selected.title}`}
-              />
+              <ProjectPreview key={selected.title} project={selected} />
               <p className="os-kicker">
                 Proyecto / {String(projectIndex! + 1).padStart(2, '0')}
               </p>
               <h2>{selected.title}</h2>
+              <p className="os-project-visibility">
+                {selected.visibility === 'private' ? 'Código privado' : 'Código público'}
+              </p>
               <p>{selected.description}</p>
               <div className="os-tags">
                 {selected.technologies.map((t) => (
                   <span key={t}>{t}</span>
                 ))}
               </div>
+              <h3>Qué incluye</h3>
+              <ul className="os-project-highlights">
+                {selected.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+              </ul>
+              {selected.visibility === 'private' && (
+                <p className="os-project-note">El código fuente de este proyecto no es público. Puedes conocer sus funciones aquí o contactarme para conversar sobre su desarrollo.</p>
+              )}
               <div className="os-actions">
-                <LinkOut className="os-primary" href={selected.repoUrl}>
-                  Ver repositorio
-                </LinkOut>
+                {selected.visibility === 'public' && selected.repoUrl && (
+                  <LinkOut className="os-primary" href={selected.repoUrl}>
+                    Ver repositorio
+                  </LinkOut>
+                )}
                 {selected.liveUrl && (
                   <LinkOut className="os-secondary" href={selected.liveUrl}>
                     Abrir demo
+                  </LinkOut>
+                )}
+                {selected.visibility === 'private' && (
+                  <LinkOut className="os-secondary" href={socials[4][1]}>
+                    Conversemos sobre el proyecto
                   </LinkOut>
                 )}
               </div>
@@ -431,7 +456,7 @@ export function MichaelDesktop({
                 <span className="os-count">{list.length} archivos</span>
               </div>
               <div className="os-filters" aria-label="Filtrar proyectos">
-                {['Todos', 'JavaScript', 'HTML', 'C++'].map((f) => (
+                {['Todos', 'Next.js', 'React', 'Rust', 'Kotlin', 'JavaScript'].map((f) => (
                   <button
                     key={f}
                     aria-pressed={filter === f}
@@ -448,18 +473,16 @@ export function MichaelDesktop({
                     key={p.title}
                     onClick={() => setProjectIndex(i)}
                   >
-                    <Photo
-                      src={p.thumbnail}
-                      alt={`Vista previa de ${p.title}`}
-                    />
+                    <ProjectPreview project={p} />
                     <div>
                       <span className="os-kicker">
                         {String(i + 1).padStart(2, '0')} / {p.technologies[0]}
                       </span>
                       <h3>{p.title}</h3>
+                      <span className="os-project-visibility">{p.visibility === 'private' ? 'Código privado' : 'Código público'}</span>
                       <p>{p.description}</p>
                       <span className="os-file-open">
-                        Abrir proyecto <ArrowUpRight size={15} />
+                        Ver detalles <ChevronRight size={15} />
                       </span>
                     </div>
                   </button>
@@ -589,13 +612,15 @@ export function MichaelDesktop({
         </div>
         <h3>Proyectos seleccionados</h3>
         <div className="os-recruiter-projects">
-          {projects.map((p) => (
-            <LinkOut key={p.title} href={p.repoUrl}>
+          {projects.map((p, index) => (
+            <button key={p.title} className="os-recruiter-project" onClick={() => { setProjectIndex(index); open('projects'); }}>
               <span>
                 <strong>{p.title}</strong>
                 <small>{p.technologies.join(' · ')}</small>
+                <small>{p.visibility === 'private' ? 'Código privado · ver ficha' : 'Código público · ver ficha'}</small>
               </span>
-            </LinkOut>
+              <ChevronRight size={16} aria-hidden="true" />
+            </button>
           ))}
         </div>
         <h3>Conversemos</h3>
