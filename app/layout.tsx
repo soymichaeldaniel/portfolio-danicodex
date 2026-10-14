@@ -8,14 +8,14 @@ const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://michaeldanielos.vercel.app'),
-  title: { default: 'Michael Daniel — Mi escritorio personal', template: '%s | Michael Daniel' },
+  title: 'Michael OS',
   description: 'Explora el escritorio de Michael Daniel: proyectos, cursos gratuitos, tecnología e ideas. Desarrollador frontend y creador de contenido.',
   icons: { icon: '/michael-daniel-logo-transparent.png', apple: '/michael-daniel-logo-transparent.png' },
   openGraph: {
-    title: 'Michael Daniel — Mi escritorio personal',
+    title: 'Michael OS',
     description: 'Un escritorio, muchas ideas. Explora mis proyectos, cursos y un poco de lo que soy.',
     url: '/',
-    siteName: 'Michael Daniel',
+    siteName: 'Michael OS',
     locale: 'es_PE',
     type: 'website',
   },

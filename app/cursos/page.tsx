@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { MichaelDesktop } from '@/components/michael-desktop';
 export const metadata: Metadata = {
-  title: 'Cursos de programación',
+  title: 'Michael OS',
   description:
     'Rutas gratuitas de Michael Daniel para aprender programación con proyectos prácticos.',
 };
