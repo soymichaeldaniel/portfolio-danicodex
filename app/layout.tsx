@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://michaeldanielos.vercel.app'),
   title: { default: 'Michael Daniel — Mi escritorio personal', template: '%s | Michael Daniel' },
   description: 'Explora el escritorio de Michael Daniel: proyectos, cursos gratuitos, tecnología e ideas. Desarrollador frontend y creador de contenido.',
-  icons: { icon: '/michael-daniel.png', apple: '/michael-daniel.png' },
+  icons: { icon: '/michael-daniel-logo.png', apple: '/michael-daniel-logo.png' },
   openGraph: {
     title: 'Michael Daniel — Mi escritorio personal',
     description: 'Un escritorio, muchas ideas. Explora mis proyectos, cursos y un poco de lo que soy.',
