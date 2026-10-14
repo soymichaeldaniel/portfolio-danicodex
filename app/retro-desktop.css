@@ -33,7 +33,18 @@
 .os-launcher:focus-visible>span:last-child { background:#000080; }
 .os-app-icon,.os-app-icon.blue,.os-app-icon.silver,.os-app-icon.violet,.os-app-icon.green,.os-app-icon.red { width:42px;height:42px;border:0;background:none;box-shadow:none; }
 .retro-icon { display:block;filter:drop-shadow(1px 1px 0 #0005);image-rendering:pixelated; }
-.os-window-area { inset:50px 45px 42px 135px; }
+.os-window-area { inset:0; }
+.os-window { width:min(900px,calc(100% - 40px));height:min(640px,calc(100% - 60px)); }
+.welcome-window { height:min(560px,calc(100% - 60px)); }
+.os-window.is-maximized { width:100%;height:100%; }
+.os-brand-logo { width:24px;height:24px;object-fit:cover;border:1px solid #808080; }
+.os-cv { display:flex;flex-direction:column;height:100%;min-height:350px;padding:8px; }
+.os-cv-toolbar { display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:5px 0 12px; }
+.os-cv-toolbar>span { margin-right:auto;font-size:12px; }
+.os-cv-viewer { display:block;width:100%;border:2px inset #dfdfdf;background:#eee; }
+.os-cv-viewer img { width:100%;height:auto;display:block; }
+@media(min-width:761px) { .michael-os:has(.os-window.is-maximized:not([hidden])) .os-topbar { display:none; } }
+.os-cv-mobile-note { color:#555;font-size:11px;padding-top:8px; }
 .os-window { padding:3px;border:0;background:#c0c0c0;box-shadow:inset 1px 1px #fff,inset -1px -1px #000,inset 2px 2px #dfdfdf,inset -2px -2px #808080,2px 2px #003c3c;animation:none!important; }
 .os-window.is-background { filter:none; }
 .os-window-titlebar { height:28px;background:#000080;color:#fff;padding-left:6px;border:0; }
@@ -124,6 +135,7 @@
   .os-wordmark { display:flex;color:#111; }.os-wordmark>span { color:#000080; }
   .os-recruiter-access { font-size:11px!important;padding:8px; }
   .os-window-area { inset:0; }.os-window { height:100%;padding:3px;box-shadow:inset 1px 1px #fff,inset -1px -1px #000; }
+  .os-window,.welcome-window { width:100%;height:100%; }
   .os-window-titlebar { height:34px; }.os-window-controls { height:26px; }.os-window-controls button { width:29px; }
   .retro-window-menu button { padding:7px 9px; }
   .os-window-body { background:#f8f8f8; }.os-welcome { grid-template-columns:1fr;padding:23px;gap:24px; }

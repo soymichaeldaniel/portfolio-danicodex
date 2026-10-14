@@ -35,6 +35,7 @@ type AppId =
   | 'projects'
   | 'courses'
   | 'stack'
+  | 'cv'
   | 'recruiter';
 type AppWindow = {
   id: AppId;
@@ -53,6 +54,7 @@ const apps = [
   { id: 'projects' as const, title: 'Proyectos', icon: Folder, color: 'blue' },
   { id: 'courses' as const, title: 'Cursos', icon: BookOpen, color: 'violet' },
   { id: 'stack' as const, title: 'Stack.exe', icon: Terminal, color: 'green' },
+  { id: 'cv' as const, title: 'Mi CV.pdf', icon: FileText, color: 'silver' },
 ];
 const titles: Record<AppId, string> = {
   welcome: 'Bienvenido a mi espacio',
@@ -60,6 +62,7 @@ const titles: Record<AppId, string> = {
   projects: 'Proyectos',
   courses: 'Cursos',
   stack: 'Stack.exe',
+  cv: 'Michael Daniel — CV 2026.pdf',
   recruiter: 'Perfil profesional',
 };
 const socials = [
@@ -204,6 +207,14 @@ export function MichaelDesktop({
         : document.getElementById(`launcher-${id}`)?.focus(),
     );
   }
+  function showDesktop() {
+    setWindows(current => current.map(w => ({ ...w, minimized: true })));
+    setMenu(false);
+    const url = new URL(location.href);
+    url.searchParams.delete('app');
+    url.hash = '';
+    history.replaceState({}, '', url);
+  }
   useEffect(() => {
     if (active) panels.current[active]?.focus();
   }, [active]);
@@ -268,13 +279,19 @@ export function MichaelDesktop({
     const area = panel.parentElement!.getBoundingClientRect();
     const bx = (area.width - panel.offsetWidth) / 2;
     const by = (area.height - panel.offsetHeight) / 2;
-    const x = Math.max(-bx, Math.min(bx, d.x + e.clientX - d.sx));
-    const y = Math.max(-by, Math.min(by, d.y + e.clientY - d.sy));
+    // Use the entire desktop, allowing partial overhang while keeping the title reachable.
+    const x = Math.max(-bx - panel.offsetWidth + 80, Math.min(bx + panel.offsetWidth - 80, d.x + e.clientX - d.sx));
+    const y = Math.max(-by, Math.min(area.height - by - 32, d.y + e.clientY - d.sy));
     setWindows((current) =>
       current.map((w) => (w.id === d.id ? { ...w, x, y } : w)),
     );
   }
   function content(id: AppId) {
+    if (id === 'cv') return <div className="os-cv">
+      <div className="os-cv-toolbar"><span>Currículum · PDF · 2026</span><a className="os-secondary" href="/Michael-Daniel-CV-2026.pdf" download>Descargar CV</a><LinkOut className="os-secondary" href="/Michael-Daniel-CV-2026.pdf">Abrir PDF</LinkOut></div>
+      <a className="os-cv-viewer" href="/Michael-Daniel-CV-2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir el currículum original en PDF (otra pestaña)"><img src="/michael-daniel-cv-preview.png" alt="Vista previa del currículum de Michael Daniel, página 1 de 1. Abre el PDF original para leerlo o descargarlo." /></a>
+      <p className="os-cv-mobile-note">Página 1 de 1 · Haz clic en el documento para abrir el PDF original.</p>
+    </div>;
     if (id === 'welcome')
       return (
         <div className="os-welcome">
@@ -310,7 +327,7 @@ export function MichaelDesktop({
           </div>
           <div className="os-portrait-wrap">
             <Photo
-              src="https://github.com/soymichaeldaniel.png?size=520"
+              src="/michael-daniel.png"
               alt="Retrato de Michael Daniel"
               className="os-portrait"
             />
@@ -583,6 +600,7 @@ export function MichaelDesktop({
         </div>
         <h3>Conversemos</h3>
         <div className="os-actions">
+          <button className="os-secondary" onClick={() => open('cv')}><FileText size={16} /> Ver y descargar mi CV</button>
           <LinkOut className="os-primary" href={socials[4][1]}>
             Contactar en LinkedIn
           </LinkOut>
@@ -607,7 +625,7 @@ export function MichaelDesktop({
       <h1 className="sr-only">Michael Daniel — Mi escritorio personal</h1>
       <header className="os-topbar">
         <a href="/" className="os-wordmark">
-          <Monitor size={17} /> michael<span>OS</span>
+          <img className="os-brand-logo" src="/michael-daniel.png" alt="" /> michael<span>OS</span>
           <small>v.01</small>
         </a>
         <span className="os-topbar-center">
@@ -621,7 +639,9 @@ export function MichaelDesktop({
           <FileText size={15} /> Para reclutadores <ArrowUpRight size={13} />
         </button>
       </header>
-      <div className="os-desktop">
+      <div className="os-desktop" onClick={e => {
+        if (!(e.target as HTMLElement).closest('.os-window, .os-launchers, .os-mobile-intro, button, a')) showDesktop();
+      }}>
         <div className="os-wallpaper" aria-hidden="true">
           <span>md.</span>
           <small>SIEMPRE EN CONSTRUCCIÓN.</small>
@@ -802,7 +822,7 @@ export function MichaelDesktop({
         <nav className="os-start-menu" aria-label="Menú de inicio">
           <div>
             <Photo
-              src="https://github.com/soymichaeldaniel.png?size=96"
+              src="/michael-daniel.png"
               alt=""
             />
             <span>
