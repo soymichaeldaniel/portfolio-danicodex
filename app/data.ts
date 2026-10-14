@@ -82,6 +82,8 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'CSS Modules'],
     visibility: 'public',
     repoUrl: 'https://github.com/soymichaeldaniel/cinergia',
+    liveUrl: 'https://cinergia.vercel.app/',
+    thumbnail: '/cinergia-thumbnail.png',
     highlights: ['Páginas de inicio y nosotros con componentes reutilizables.', 'Carruseles de fotografías y aliados, y animaciones de aparición.', 'Secciones para presentar carreras, principios, equipo y actividades.'],
     accent: 'yellow',
   },
